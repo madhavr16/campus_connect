@@ -1,0 +1,541 @@
+:root {
+    --bg: #0f1724;
+    /* deep navy */
+    --panel: #0f1724;
+    --card: #0b1220;
+    --muted: #9aa4b2;
+    --accent: #6ee7b7;
+    /* mint */
+    --accent-2: #60a5fa;
+    /* sky */
+    --glass: rgba(255, 255, 255, 0.04);
+    --radius: 12px;
+    --max-width: 1100px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body,
+#root {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, #071026 0%, #071228 60%);
+    color: #e6eef6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Landing hero styles */
+.landing-hero {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(6, 10, 25, 0.6), rgba(3, 9, 20, 0.6)), url('/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 20px;
+}
+
+.landing.card {
+    max-width: 860px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+    padding: 36px;
+    border-radius: 14px;
+}
+
+.landing h1 {
+    font-size: 2.4rem;
+    margin-bottom: 8px
+}
+
+.landing p {
+    font-size: 1.05rem;
+    color: #cfe7ea
+}
+
+.landing .btn-primary {
+    padding: 12px 20px;
+    font-size: 1rem
+}
+
+.landing .btn-ghost {
+    padding: 12px 20px;
+    font-size: 1rem
+}
+
+@media (max-width:720px) {
+    .landing h1 {
+        font-size: 1.8rem
+    }
+
+    .landing.card {
+        padding: 20px
+    }
+}
+
+/* Auth forms */
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 140px);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 28px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    box-shadow: 0 14px 40px rgba(2, 6, 23, 0.7);
+}
+
+.auth-card h2 {
+    margin-top: 0;
+    font-size: 1.6rem
+}
+
+.auth-card .form-row {
+    margin-bottom: 16px
+}
+
+.auth-card label.small {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+.auth-card input {
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.auth-card .input-row {
+    display: flex;
+    gap: 10px
+}
+
+.auth-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 12px
+}
+
+.auth-error {
+    color: #ffb4b4;
+    margin-top: 8px;
+    background: rgba(255, 180, 180, 0.04);
+    padding: 8px 10px;
+    border-radius: 8px
+}
+
+
+.site-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand .brand-link {
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.15rem;
+}
+
+.brand-meta {
+    margin-top: 6px
+}
+
+.brand-meta .user-greet {
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: block
+}
+
+.site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 14px;
+}
+
+.site-nav .btn {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.site-nav .btn {
+    margin-left: 10px
+}
+
+.site-nav a:hover {
+    color: var(--accent-2)
+}
+
+/* make the Register button in the header navy blue for better branding */
+.site-nav a.btn.btn-primary {
+    color: #001f3f;
+}
+
+.main-content {
+    padding-top: 24px;
+    padding-bottom: 80px
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: var(--radius);
+    padding: 16px;
+    margin: 12px 0;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.card h2 {
+    margin-top: 0
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0;
+    font-weight: 600
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #001f3f;
+    font-weight: 500;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--muted)
+}
+
+.btn-ghost {
+    margin-left: 18px
+}
+
+.btn-link {
+    background: transparent;
+    color: #012a6b;
+    /* darker blue */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-link:hover {
+    color: var(--accent-2);
+    text-decoration: none
+}
+
+/* Trips room chat styles */
+.trip-room {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trip-room .messages {
+    max-height: 280px;
+    overflow: auto;
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.message {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+.message.system {
+    text-align: center;
+    color: var(--muted);
+    font-style: italic;
+    background: transparent;
+}
+
+.message.other {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.message.self {
+    background: linear-gradient(90deg, rgba(96, 165, 250, 0.12), rgba(59, 130, 246, 0.06));
+    align-self: flex-end;
+    border: 1px solid rgba(96, 165, 250, 0.12);
+}
+
+.message .msg-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 6px
+}
+
+.message .msg-body {
+    font-size: 0.95rem;
+    color: var(--text)
+}
+
+.msg-input-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px
+}
+
+.msg-input-row input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.msg-input-row button {
+    padding: 10px 14px
+}
+
+/* Form controls - global */
+input[type=text],
+input[type=password],
+input[type=number],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box;
+    transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+    min-height: 42px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+/* Placeholder color for better contrast */
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Focus state: subtle ring and stronger border for accessibility */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: rgba(58, 123, 213, 0.9);
+    box-shadow: 0 4px 14px rgba(58, 123, 213, 0.08);
+    transform: translateY(-1px);
+}
+
+.auth-card input:focus {
+    border-color: rgba(96, 165, 250, 0.95);
+    box-shadow: 0 8px 28px rgba(96, 165, 250, 0.08);
+}
+
+/* Disabled and read-only states */
+input:disabled,
+textarea:disabled,
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.row {
+    display: flex;
+    gap: 12px
+}
+
+.col {
+    flex: 1
+}
+
+.small {
+    font-size: 0.9rem;
+    color: var(--muted)
+}
+
+/* Floating action button */
+.fab {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    width: 62px;
+    height: 62px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    color: #041025;
+    font-size: 28px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+    cursor: pointer;
+}
+
+.fab:active {
+    transform: translateY(1px)
+}
+
+/* Modal */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50
+}
+
+.modal {
+    width: 100%;
+    max-width: 640px;
+    background: #071226;
+    /* solid modal background for better contrast */
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 18px 60px rgba(2, 6, 23, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.modal h3 {
+    margin-top: 0
+}
+
+/* improve form controls inside modal */
+.modal input,
+.modal textarea,
+.modal select {
+    background: #0b1220;
+    /* solid input background */
+    color: #e6eef6;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modal label.small {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: var(--muted)
+}
+
+/* card header */
+.card strong {
+    font-size: 1.05rem
+}
+
+.card .small {
+    color: var(--muted);
+    display: block
+}
+
+@media (max-width:720px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .site-nav {
+        margin-top: 8px
+    }
+
+    .row {
+        flex-direction: column
+    }
+}
+
+.feed-list .card {
+    margin-bottom: 10px
+}
+
+/* small utility spacing */
+.mt-8 {
+    margin-top: 8px
+}
+
+.mb-8 {
+    margin-bottom: 8px
+}
+
+/* badge indicating a trip is full */
+.full-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #ff6b6b;
+    border-radius: 8px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 107, 107, 0.15);
+}
+
+/* small button variants */
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+.btn-join {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    color: #041025;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-room {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.btn-join:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.12);
+}
+
+.btn-room:hover {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--accent-2);
+}
