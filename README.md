@@ -52,4 +52,32 @@ use campus_connect
 db.users.updateOne({ registrationNumber: '01234' }, { $set: { role: 'ADMIN' } })
 ```
 
+## Deploy backend to Render
+
+This repo includes a `render.yaml` manifest you can use to deploy the backend service on Render. Steps:
+
+1. Push your repo to GitHub (if not already).
+2. In Render, choose "New -> Import from GitHub" and connect to this repository.
+3. Render will detect the `render.yaml` manifest; confirm service `campus-connect-backend`.
+4. In the Render service settings add environment variables:
+	- `MONGO_URI` — your MongoDB Atlas connection string (mongodb+srv://...)
+	- `JWT_SECRET` — a secure random secret for JWT signing
+	- `NODE_ENV` — set to `production` (default)
+
+5. Deploy. Render will run `npm install` and `npm run start` in the `backend` folder.
+
+6. After the service is live, update your Vercel frontend environment variables:
+	- `VITE_API_BASE` = https://<your-backend-host>/api
+	- `VITE_API_SOCKET` = https://<your-backend-host>
+
+7. (Optional) Run migration script against the production DB if you're migrating from an old schema:
+
+```bash
+MONGO_URI="your_atlas_uri" node backend/scripts/migrate_registration.js
+```
+
+Notes:
+- Replace `<YOUR_GITHUB_ORG/REPO>` in `render.yaml` with your GitHub repo path if you prefer using the manifest; you can also configure the service manually in the Render UI.
+- Render provides automatic deploys on commits to the configured branch.
+
 
